@@ -1,7 +1,7 @@
 from django import forms
-from parametros.models import TipoDocu,EstaCivil,Etnia,Cargo,TipoEstu
-from .models import Habilidad,DatosUsua,Experiencia,Educacion
-from .choices import NivelHabilidad,GENEROS
+from parametros.models import TipoDocu,EstaCivil,Etnia,Cargo,TipoEstu,DatoUsua
+from .models import Habilidades,Experiencia,Educacion,Logros
+from datos.choices import NivelHabilidad,GENEROS
 from django.forms import formset_factory
 
 class MultipleForm(forms.ModelForm):
