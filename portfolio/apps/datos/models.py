@@ -2,7 +2,6 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from apps.parametros.models import Etnia,TipoDocu,EstaCivi,TipoLogr,TipoEduc,Pais,Departamento,Ciudad
 from apps.usuarios.models import Usuario
-
 # Create your models here.
 
 #clase cargo
@@ -18,15 +17,15 @@ class Cargo(models.Model):
         return self.NombCarg
 
 #clase datos de usuario
-class DatoUsua(models.Model):
+class DatosUsua(models.Model):
     
-    id_Usuario = models.ForeignKey(Usuario,on_delete = models.CASCADE, verbose_name = "Numero Usuario")
-    id_TipoDocu = models.ForeignKey(TipoDocu,on_delete = models.CASCADE, verbose_name = "Tipo Documento")
-    id_EstaCivi = models.ForeignKey(EstaCivi,on_delete = models.CASCADE, verbose_name = "Estado Civil")
-    id_Etnia = models.ForeignKey(Etnia,on_delete = models.CASCADE, verbose_name = "Etnia")
-    id_Departamentos = models.ForeignKey(Departamento,on_delete = models.CASCADE, verbose_name = "Departamento")
-    id_Pais = models.ForeignKey(Pais, on_delete = models.CASCADE, verbose_name = "Pais")
-    PerfProf = models.CharField(max_length=200, default="", verbose_name = "Perfil Profesional")
+    IdUsuarios = models.ForeignKey(Usuario,on_delete = models.CASCADE, verbose_name = "Numero Usuario")
+    IdTipoDocu = models.ForeignKey(TipoDocu,on_delete = models.CASCADE, verbose_name = "Tipo Documento")
+    IdEstaCivi = models.ForeignKey(EstaCivi,on_delete = models.CASCADE, verbose_name = "Estado Civil")
+    IdEtnias = models.ForeignKey(Etnia,on_delete = models.CASCADE, verbose_name = "Etnia")
+    IdDepartamentos = models.ForeignKey(Departamento,on_delete = models.CASCADE, verbose_name = "Departamento")
+    IdPaises = models.ForeignKey(Pais, on_delete = models.CASCADE, verbose_name = "Pais")
+    PerfilPro = models.CharField(max_length=200, default="", verbose_name = "Perfil Profesional")
     Genero = models.CharField(max_length=45, default="", verbose_name = "Genero")
     Telefono = models.CharField(max_length=45, default="", verbose_name = "Telefono")
     Direccion = models.CharField(max_length=255, default="", verbose_name = "Direccion")
@@ -39,11 +38,11 @@ class DatoUsua(models.Model):
         return self.PerfProf
 
 #clase habilidades
-class Habilidades(models.Model):
+class Habilidad(models.Model):
 
-    id_Usuario = models.ForeignKey(Usuario,on_delete = models.CASCADE, verbose_name = "Numero Usuario")
-    NombHabi = models.CharField(max_length=155, default="", verbose_name = "Nombre Habilidad")
-    NiveHabi = models.CharField(max_length=50, default="", verbose_name = "Nivel Habilidad")
+    IdUsuarios = models.ForeignKey(Usuario,on_delete = models.CASCADE, verbose_name = "Numero Usuario")
+    NombHabil = models.CharField(max_length=155, default="", verbose_name = "Nombre Habilidad")
+    NiveHabil = models.CharField(max_length=50, default="", verbose_name = "Nivel Habilidad")
 
     class Meta:
         verbose_name = "Habilidad"
@@ -53,10 +52,10 @@ class Habilidades(models.Model):
         return self.NombHabi
 
 #clase Logros
-class Logros(models.Model):
+class Logro(models.Model):
 
-    id_TipoLogr = models.ForeignKey(TipoLogr,on_delete=models.CASCADE, verbose_name = "Tipo de logro")
-    id_Usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE, verbose_name = "Usuario")
+    IdTipoLogr = models.ForeignKey(TipoLogr,on_delete=models.CASCADE, verbose_name = "Tipo de logro")
+    IdUsuarios = models.ForeignKey(Usuario,on_delete=models.CASCADE, verbose_name = "Usuario")
     FechLogr = models.DateTimeField(auto_now=True, auto_now_add=False, verbose_name="Fecha de Logro")
     NombLogr = models.CharField(max_length=100, default="", verbose_name="Nombre de Logro")
     DescLogr = models.CharField(max_length=750, default="", verbose_name="Descripcion Logro") 
@@ -71,14 +70,14 @@ class Logros(models.Model):
 #clase educacion
 class Educacion(models.Model):
     
-    id_TipoEstu = models.ForeignKey(TipoEduc,on_delete=models.CASCADE, verbose_name = "Tipo de Educación") 
-    id_Usuarios = models.ForeignKey(Usuario,on_delete=models.CASCADE, verbose_name = "Usuario")
-    id_Ciudades = models.ForeignKey(Ciudad,on_delete=models.CASCADE, verbose_name = "Ciudad")
-    id_Departamentos = models.ForeignKey(Departamento,on_delete=models.CASCADE, verbose_name = "Departamento")
-    id_Paises = models.ForeignKey(Pais,on_delete=models.CASCADE, verbose_name = "Pais")
+    IdTipoEstu = models.ForeignKey(TipoEduc,on_delete=models.CASCADE, verbose_name = "Tipo de Educación") 
+    IdUsuarios = models.ForeignKey(Usuario,on_delete=models.CASCADE, verbose_name = "Usuario")
+    IdCiudades = models.ForeignKey(Ciudad,on_delete=models.CASCADE, verbose_name = "Ciudad")
+    IdDepartamentos = models.ForeignKey(Departamento,on_delete=models.CASCADE, verbose_name = "Departamento")
+    IdPaises = models.ForeignKey(Pais,on_delete=models.CASCADE, verbose_name = "Pais")
     Instituto = models.CharField(max_length=155, default="", verbose_name = "Instituto")
     Titulo = models.CharField(max_length=155, default="", verbose_name = "Titulo")
-    FechaGrado = models.DateTimeField(auto_now = False, verbose_name = "Fecha de Grado")
+    FechGrado = models.DateTimeField(auto_now = False, verbose_name = "Fecha de Grado")
 
     class Meta: 
         verbose_name = "educacion"
@@ -90,14 +89,14 @@ class Educacion(models.Model):
 #clase experiencia
 class Experiencia(models.Model):
 
-    id_Usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE, verbose_name = "Usuario")
-    id_Cargo = models.ForeignKey(Cargo,on_delete=models.CASCADE, verbose_name = "Cargo")
-    id_Ciudad = models.ForeignKey(Ciudad,on_delete=models.CASCADE, verbose_name = "Ciudad")
-    id_Departamento = models.ForeignKey(Departamento,on_delete=models.CASCADE, verbose_name = "Departamento")
-    id_Pais = models.ForeignKey(Pais,on_delete=models.CASCADE, verbose_name = "Pais")
+    IdUsuarios = models.ForeignKey(Usuario,on_delete=models.CASCADE, verbose_name = "Usuario")
+    IdCargo = models.ForeignKey(Cargo,on_delete=models.CASCADE, verbose_name = "Cargo")
+    IdCiudad = models.ForeignKey(Ciudad,on_delete=models.CASCADE, verbose_name = "Ciudad")
+    IdDepartamentos = models.ForeignKey(Departamento,on_delete=models.CASCADE, verbose_name = "Departamento")
+    IdPaises = models.ForeignKey(Pais,on_delete=models.CASCADE, verbose_name = "Pais")
     Empresa = models.CharField(max_length=225, default="", verbose_name="Empresa")
-    FechInic = models.DateTimeField(auto_now=True, auto_now_add=False, verbose_name="Fecha de Inicio") 
-    FechFin = models.DateTimeField(auto_now=True, auto_now_add=False, verbose_name="Fecha de Finalizacion")
+    FechaInic = models.DateTimeField(auto_now=True, auto_now_add=False, verbose_name="Fecha de Inicio") 
+    FechaFin = models.DateTimeField(auto_now=True, auto_now_add=False, verbose_name="Fecha de Finalizacion")
     Funciones = models.CharField(max_length=500, default="", verbose_name="Funciones") 
     Logros = models.CharField(max_length=500, default="", verbose_name="Logros") 
 
