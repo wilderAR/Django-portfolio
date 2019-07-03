@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/timeline.css">
+  <title>Perfil</title>
+</head>
+
+<body class="bg-light">
+  <div class="navbar navbar-dark bg-dark">
+    <h1 class="text-center text-light">Perfil</h1>
+  </div>
+  <br>
+  <div class="container bootstrap snippet">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="text-center"><img class="img-fluid" src="https://avatar.leagueoflegends.com/LAN/ShroudG.png" alt="">
+        </div>
+        <br>
+        <div class="col-sm-1">
+          <input type="file" name="" id="" class="btn btn-secondary">
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+              aria-selected="true">
+              Datos Generales</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+              aria-selected="false">
+              Experiencia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+              aria-selected="false">
+              Formacion</a>
+          </li>
+        </ul>
+        <!-- Datos personales -->
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <h2 class="text-center">Datos Personales</h2>
+            <table class="table">
+              <tr>
+                <th scope="col">Nombre:</th>
+                <td><input type="text" class="form-control"></td>
+              </tr>
+              <tr>
+                <th>Indentificacion:</th>
+                <td><input type="text" class="form-control"></td>
+              </tr>
+              <tr>
+                <th>Correo:</th>
+                <td><input type="text" class="form-control"></td>
+              </tr>
+              <tr>
+                <th>Edad:</th>
+                <td><input type="text" class="form-control"></td>
+              </tr>
+              <tr>
+                <th>Estado Civil:</th>
+                <td><input type="text" class="form-control"></td>
+              </tr>
+              <tr>
+                <th>Telefono:</th>
+                <td><input type="text" class="form-control"></td>
+              </tr>
+              <tr>
+                <th>Celular:</th>
+                <td><input type="text" class="form-control"></td>
+              </tr>
+              <tr>
+                <th>Departamento:</th>
+                <td><input type="text" class="form-control"></td>
+              </tr>
+              <hr>
+              <tr>
+                <th>Ciudad:</th>
+                <td><input type="text" class="form-control"></td>
+              </tr>
+              <tr>
+                <th>Dirrecion:</th>
+                <td><input type="text" class="form-control"></td>
+              </tr>
+              <tr>
+                <td><input type="submit" value="Guardar" class="btn-success"></td>
+              </tr>
+            </table>
+          </div>
+          <!-- Experiencia Laboral -->
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <table>
+              <tr>
+                <td>
+                  <div class="card" style="width: 25rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Cargo<input type="text" class="form-control"></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Empresa<input type="text" class="form-control"></h6>
+                      Descripción<textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
+                  </div>
+                  <div>
+                    <input type="submit" class="btn btn-success" value="Guardar">
+                  </div>
+                </td>
+
+              </tr>
+            </table>
+            <a href="perfil.html" class="btn btn-secondary">Regresar</a>
+          </div>
+        
+          <!-- Experiencia laboral -->
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="container">
+              <div class="page-header">
+                <h1 id="">Formacion</h1>
+              </div>
+              <div id="timeline">
+                <div class="row timeline-movement timeline-movement-top">
+                  <div class="timeline-badge timeline-future-movement">
+                    <a href="#">
+                      <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                  </div>
+                  <div class="timeline-badge timeline-filter-movement">
+                    <a href="#">
+                      <span class="glyphicon glyphicon-time"></span>
+                    </a>
+                  </div>
+
+                </div>
+                <div class="row timeline-movement">
+
+                  <div class="timeline-badge">
+                    <span class="timeline-balloon-date-day">26</span>
+                    <span class="timeline-balloon-date-month">FEB</span>
+                  </div>
+
+
+                  <div class="col-sm-6  timeline-item">
+                    <div class="row">
+                      <div class="col-sm-11">
+                        <div class="timeline-panel credits">
+                          <ul class="timeline-panel-ul">
+                            <li><span class="importo">Primaria</span></li>
+                            <li><span class="causale">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
+                            </li>
+                            <li>
+                              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 26/02/2006</small>
+                              </p>
+                            </li>
+                          </ul>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6  timeline-item">
+                    <div class="row">
+                      <div class="col-sm-offset-1 col-sm-11">
+                        <div class="timeline-panel debits">
+                          <ul class="timeline-panel-ul">
+                            <li><span class="importo">bachiller</span></li>
+                            <li><span class="causale">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
+                            </li>
+                            <li>
+                              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11/11/2011</small>
+                              </p>
+                            </li>
+                          </ul>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <a href="perfil.html" class="btn btn-secondary">Regresar</a>
+                </div>
+               
+                <!--due -->
+
+                <div class="row timeline-movement">
+
+
+                  <div class="timeline-badge">
+                    <span class="timeline-balloon-date-day">13</span>
+                    <span class="timeline-balloon-date-month">APR</span>
+                  </div>
+
+                  <div class="col-sm-offset-6 col-sm-6  timeline-item">
+                    <div class="row">
+                      <div class="col-sm-offset-1 col-sm-11">
+                        <div class="timeline-panel debits">
+                          <ul class="timeline-panel-ul">
+                            <li><span class="importo">Media Tecnica</span></li>
+                            <li><span class="causale">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
+                            </li>
+                            <li>
+                              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11/09/2014</small>
+                              </p>
+                            </li>
+                          </ul>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6  timeline-item">
+                    <div class="row">
+                      <div class="col-sm-11">
+                        <div class="timeline-panel credits">
+                          <ul class="timeline-panel-ul">
+                            <li><span class="importo">Tecnologia</span></li>
+                            <li><span class="causale">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
+                            </li>
+                            <li>
+                              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11/09/2014</small>
+                              </p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row timeline-movement">
+                  <div class="timeline-badge">
+                    <span class="timeline-balloon-date-day">10</span>
+                    <span class="timeline-balloon-date-month">APR</span>
+                  </div>
+
+                </div>
+                <a href="perfil.html" class="btn btn-secondary">Regresar</a>
+              </div>
+             
+              <script src="js/jquery.js"></script>
+              <script src="js/popper.js"></script>
+              <script src="js/bootstrap.js"></script>
+              <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous">
+              </script>
+</body>
+
+</html>
