@@ -7,8 +7,6 @@ from django.forms import formset_factory
 class MultipleForm(forms.ModelForm):
     action = forms.CharField(max_length=60,widget=forms.HiddenInput())
 
-    
-
 class DatosPersonaForm(MultipleForm):
     IdTipoDocu = forms.ModelChoiceField(label="Tipo de documento",queryset=TipoDocu.objects.all(),required=True,widget=forms.Select(attrs={'class':'form-control'}),)
     IdUsuarios = forms.CharField(label="Numero de documento",widget=forms.TextInput(attrs={'class':'form-control'}),required=True)
