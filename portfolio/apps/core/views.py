@@ -17,3 +17,6 @@ def registro(request):
 def perfil(request):
     return render(request,'core/assets/perfil.html')
 
+def editar(request):
+    return render(request,'core/assets/editar_perfil.html')
+
